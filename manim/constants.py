@@ -7,6 +7,7 @@ from __future__ import annotations
 import numpy as np
 from cloup import Context
 from PIL.Image import Resampling
+from cairo import LineJoin
 
 __all__ = [
     "NOT_SETTING_FONT_MSG",
@@ -74,6 +75,7 @@ __all__ = [
     "CONTEXT_SETTINGS",
     "SHIFT_VALUE",
     "CTRL_VALUE",
+    "LINE_JOINS",
 ]
 # Messages
 NOT_SETTING_FONT_MSG: str = """
@@ -264,3 +266,9 @@ CONTEXT_SETTINGS = Context.settings(
     align_sections=True,
     show_constraints=True,
 )
+
+LINE_JOINS = {
+    "ROUND": LineJoin.ROUND,
+    "BEVEL": LineJoin.BEVEL,
+    "MITER": LineJoin.MITER
+}
